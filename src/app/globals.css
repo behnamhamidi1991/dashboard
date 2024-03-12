@@ -39,3 +39,27 @@ span {
   color: var(--secondary-color);
   height: 100vh;
 }
+
+.btncontainer {
+  margin-top: 30px;
+}
+.loginBtn {
+  padding: 8px 12px;
+  background-color: var(--main-color);
+  border-radius: 4px;
+  margin: 0 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.registerBtn {
+  padding: 8px 12px;
+  background-color: var(--medium-color);
+  border-radius: 4px;
+  margin: 0 5px;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+}

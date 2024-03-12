@@ -10,8 +10,14 @@ const Home = () => {
         Please login to use all our amazing services. If you don&quot;t have an
         account, create one!
       </p>
-      <Link href="/login">Login</Link>
-      <Link href="/login">Register</Link>
+      <div className="btncontainer">
+        <Link href="/login" className="loginBtn">
+          Login
+        </Link>
+        <Link href="/login" className="registerBtn">
+          Register
+        </Link>
+      </div>
     </div>
   );
 };
