@@ -5,6 +5,7 @@ import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Spinner from "@/components/shared/Spinner/Spinner";
 
 const SignupPage = () => {
   const router = useRouter();
@@ -14,9 +15,12 @@ const SignupPage = () => {
     password: "",
   });
 
+  const [loading, setLoading] = React.useState(false);
+
   return (
     <div className="signup-page">
       <form className="signup-form">
+        <div className="loadingSpinner">{loading ? <Spinner /> : null}</div>
         <h2>Signup</h2>
 
         <div className="inputcontainer">

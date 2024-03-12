@@ -40,8 +40,8 @@ const Home = () => {
         <Link href="/login" className="loginBtn">
           Login
         </Link>
-        <Link href="/login" className="registerBtn">
-          Register
+        <Link href="/signup" className="registerBtn">
+          Signup
         </Link>
       </div>
 

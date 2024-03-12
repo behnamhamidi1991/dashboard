@@ -41,6 +41,85 @@
 }
 
 .box-item:hover {
-  color: tomato;
   transform: scale(1.02);
+}
+
+.box-item:first-child:hover {
+  color: yellow;
+}
+
+.box-item:nth-child(2):hover {
+  color: rgb(74, 213, 255);
+}
+.box-item:nth-child(3):hover {
+  color: rgb(189, 189, 189);
+}
+.box-item:nth-child(4):hover {
+  color: rgb(57, 97, 253);
+}
+
+.box-item:nth-child(5):hover {
+  color: rgb(173, 64, 213);
+}
+
+.box-item:nth-child(6):hover {
+  color: rgb(71, 181, 241);
+}
+.box-item:nth-child(7):hover {
+  color: rgb(116, 147, 164);
+}
+
+.box-item:nth-child(8):hover {
+  color: rgb(54, 209, 237);
+}
+
+.box-item:nth-child(9):hover {
+  color: rgb(16, 249, 226);
+}
+
+.box-item:nth-child(10):hover {
+  color: rgb(59, 116, 240);
+}
+
+.box-item:nth-child(11):hover {
+  color: tomato;
+}
+.box-item:nth-child(12):hover {
+  color: rgb(11, 191, 143);
+}
+
+.box-item:nth-child(13):hover {
+  color: orange;
+}
+.box-item:nth-child(14):hover {
+  color: rgb(211, 30, 139);
+}
+.box-item:nth-child(15):hover {
+  color: rgb(30, 193, 211);
+}
+
+.box-item:nth-child(16):hover {
+  color: rgb(47, 110, 246);
+}
+.box-item:nth-child(17):hover {
+  color: rgb(19, 208, 126);
+}
+.box-item:nth-child(18):hover {
+  color: rgb(129, 208, 19);
+}
+.box-item:nth-child(19):hover {
+  color: rgb(30, 235, 98);
+}
+.box-item:nth-child(20):hover {
+  color: rgb(195, 195, 195);
+}
+
+.box-item:nth-child(21):hover {
+  color: rgb(86, 148, 242);
+}
+.box-item:nth-child(22):hover {
+  color: rgb(229, 126, 255);
+}
+.box-item:last-child:hover {
+  color: rgb(56, 132, 245);
 }
