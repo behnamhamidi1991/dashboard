@@ -1,8 +1,19 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./signup.css";
 import Link from "next/link";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const SignupPage = () => {
+  const router = useRouter();
+  const [user, setUser] = React.useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
   return (
     <div className="signup-page">
       <form className="signup-form">

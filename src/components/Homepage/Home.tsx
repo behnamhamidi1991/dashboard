@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import "./home.css";
@@ -24,6 +26,7 @@ import { FaLaravel } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { TbBrandCpp } from "react-icons/tb";
 import { SiDotnet } from "react-icons/si";
+import { toast } from "react-toastify";
 
 const Home = () => {
   return (
