@@ -10,5 +10,5 @@
 .homepage p {
   font-weight: 300;
   letter-spacing: 1px;
-  color: var(--);
+  color: var(--light-color);
 }
