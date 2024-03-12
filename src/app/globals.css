@@ -37,7 +37,7 @@ span {
 .app {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  height: 100vh;
+  height: 100%;
 }
 
 .btncontainer {
