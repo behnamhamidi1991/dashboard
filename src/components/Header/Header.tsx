@@ -6,10 +6,10 @@ import "./header.css";
 const Header = () => {
   return (
     <header className="header">
-      <div className="header-user">
+      <Link href="/dashboard" className="header-user">
         <FaUser />
         <p>Login & Register</p>
-      </div>
+      </Link>
       <ul className="nav-links">
         <li>
           <Link href="/">Home</Link>
