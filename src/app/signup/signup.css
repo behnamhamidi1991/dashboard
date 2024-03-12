@@ -53,7 +53,8 @@ select:-webkit-autofill:focus {
 }
 
 .signup-signupBtn {
-  background-color: var(--main-color);
+  background-color: var(--light-color);
+  color: var(--primary-color);
   width: 100%;
   padding: 8px 4px;
   font-size: 14px;
