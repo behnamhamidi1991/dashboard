@@ -22,10 +22,21 @@ const Dashboard = () => {
     }
   };
 
+  const getUserDetails = async () => {
+    const res = await axios.get("/api/users/me");
+    console.log(res.data);
+    setData(res.data.data._id);
+  };
+
   return (
     <div className="dashboard">
       <h1>Welcome To Your Admin Dashboard: $User</h1>
-      <p>Click here to go to your dashboard</p>
+      <button onClick={getUserDetails}>
+        Click here to go to your dashboard
+      </button>
+      <br />
+      {data === "nothing" ? "Nothing" : <p>{data}</p>}
+      <br />
       <button className="logoutBtn" onClick={onLogout}>
         Logout
       </button>
