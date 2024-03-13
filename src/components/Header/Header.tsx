@@ -6,20 +6,20 @@ import "./header.css";
 import axios from "axios";
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const checkAuthStatus = async () => {
-      try {
-        const response = await axios.get("/api/auth");
-        setIsLoggedIn(response.data.isLoggedIn);
-      } catch (error) {
-        console.error("Error checking auth status", error);
-      }
-    };
+  // useEffect(() => {
+  //   const checkAuthStatus = async () => {
+  //     try {
+  //       const response = await axios.get("/api/auth");
+  //       setIsLoggedIn(response.data.isLoggedIn);
+  //     } catch (error) {
+  //       console.error("Error checking auth status", error);
+  //     }
+  //   };
 
-    checkAuthStatus();
-  }, []);
+  //   checkAuthStatus();
+  // }, []);
 
   // console.log(isLoggedIn);
 
@@ -27,7 +27,7 @@ const Header = () => {
     <header className="header">
       <Link href="/dashboard" className="header-user">
         <FaUser />
-        {isLoggedIn ? <p>Dashboard</p> : <p>Login & Signup</p>}
+        <p>Dashboard</p>
       </Link>
       <ul className="nav-links">
         <li>
