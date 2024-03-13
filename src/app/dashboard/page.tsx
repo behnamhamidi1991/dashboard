@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import "./dashboard.css";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 const Dashboard = () => {
   const router = useRouter();
   const [data, setData] = React.useState("nothing");
+
+  useEffect(() => {}, [data]);
 
   const onLogout = async () => {
     try {

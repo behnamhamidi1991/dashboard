@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <Link href="/dashboard" className="header-user">
         <FaUser />
-        <p>Login & Register</p>
+        <p>Dashboard</p>
       </Link>
       <ul className="nav-links">
         <li>
