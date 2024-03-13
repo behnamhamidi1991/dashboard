@@ -1,14 +1,20 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import "./header.css";
+import Cookies from "js-cookie";
 
 const Header = () => {
+  // Check if the 'token' exists
+  const isLoggedIn = !!Cookies.get("token");
+  console.log(isLoggedIn);
+
   return (
     <header className="header">
       <Link href="/dashboard" className="header-user">
         <FaUser />
-        <p>Dashboard</p>
+        {isLoggedIn ? <p>Dashboard</p> : <p>Login & Signup</p>}
       </Link>
       <ul className="nav-links">
         <li>
