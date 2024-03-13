@@ -15,6 +15,8 @@ const LoginPage = () => {
     password: "",
   });
 
+  useEffect(() => {}, [user]);
+
   const onLogin = async (e) => {
     e.preventDefault();
     try {
@@ -39,7 +41,7 @@ const LoginPage = () => {
 
         <div className="inputcontainer">
           <input
-            type="text"
+            type="email"
             placeholder="Please enter your email ..."
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
