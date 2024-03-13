@@ -3,12 +3,25 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import "./header.css";
-import Cookies from "js-cookie";
+import axios from "axios";
 
 const Header = () => {
-  // Check if the 'token' exists
-  const isLoggedIn = !!Cookies.get("token");
-  console.log(isLoggedIn);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const response = await axios.get("/api/auth");
+        setIsLoggedIn(response.data.isLoggedIn);
+      } catch (error) {
+        console.error("Error checking auth status", error);
+      }
+    };
+
+    checkAuthStatus();
+  }, []);
+
+  // console.log(isLoggedIn);
 
   return (
     <header className="header">
