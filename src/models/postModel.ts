@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
+interface IPost extends Document {
+  postTitle: string;
+  postText: string;
+}
+
 const postSchema = new mongoose.Schema({
   postTitle: {
     type: String,
@@ -11,15 +16,7 @@ const postSchema = new mongoose.Schema({
     required: [true, "You cannot leave the article section empty!"],
     unique: false,
   },
-  postImage: {
-    type: Buffer,
-    contentType: String,
-    required: [true, "You must select an image for your post!"],
-    unique: false,
-  },
-  hashtags: {
-    type: Array,
-    required: false,
-    unique: false,
-  },
 });
+
+const Post = mongoose.models.Post || mongoose.model<IPost>("Post", postSchema);
+export default Post;
