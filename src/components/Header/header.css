@@ -12,7 +12,7 @@
   background-color: var(--main-color);
 }
 
-.header-user {
+.header-user-login {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -27,12 +27,12 @@
   border-radius: 5px;
 }
 
-.header-user p {
+.header-user-login p {
   font-size: 12px;
   font-weight: 700;
 }
 
-.header-user:hover {
+.header-user-login:hover {
   color: tomato;
 }
 
@@ -47,5 +47,31 @@
 }
 
 .nav-links li:hover {
+  color: tomato;
+}
+
+.header-user-dashboard {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  padding: 5px 8px;
+  border-radius: 5px;
+  border-bottom: 2px rgb(16, 208, 16) solid;
+  border-right: 2px rgb(16, 208, 16) solid;
+}
+
+.header-user-dashboard p {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.header-user-dashboard:hover {
   color: tomato;
 }

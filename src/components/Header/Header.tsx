@@ -32,11 +32,7 @@ const Header = () => {
     <header className="header">
       <Link href="/dashboard" className="header-user">
         <FaUser />
-<<<<<<< HEAD
-        <p>Dashboard</p>
-=======
         {isLoggedIn ? <p>Dashboard</p> : <p>Login & Register</p>}
->>>>>>> dev
       </Link>
       <ul className="nav-links">
         <li>
