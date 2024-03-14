@@ -1,0 +1,27 @@
+.blog-page-section {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-page-section-box {
+  background-color: var(--main-color);
+  padding: 20px;
+}
+
+.blog-page-section-box h2 {
+  font-weight: 700;
+  font-family: "Poppins";
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.blog-page-section-box p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.9;
+}

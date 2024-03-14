@@ -18,7 +18,7 @@ const SignupPage = () => {
 
   const [loading, setLoading] = React.useState(false);
 
-  const onSignup = async (e) => {
+  const onSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       if (

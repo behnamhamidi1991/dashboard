@@ -1,0 +1,41 @@
+.blog-page {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.blog-page input {
+  padding: 7px 10px;
+  border-radius: 4px;
+  outline: none;
+  color: var(--primary-color);
+}
+
+.blog-page textarea {
+  border-radius: 4px;
+  padding: 7px 10px;
+  height: 300px;
+  outline: none;
+  color: var(--primary-color);
+}
+
+.blog-page button {
+  background-color: var(--main-color);
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 12px;
+}
