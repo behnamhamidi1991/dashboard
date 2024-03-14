@@ -75,3 +75,11 @@
 .header-user-dashboard:hover {
   color: tomato;
 }
+
+.newPostBtn {
+  background-color: var(--medium-color);
+  color: var(--primary-color);
+  padding: 4px 9px;
+  border-radius: 3px;
+  font-weight: 700;
+}

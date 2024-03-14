@@ -27,7 +27,7 @@ const Header = () => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/">Blog</Link>
+          <Link href="/blog-page">Blog</Link>
         </li>
         <li>
           <Link href="/">About</Link>
@@ -36,6 +36,11 @@ const Header = () => {
           <Link href="/">Contact</Link>
         </li>
       </ul>
+      <div>
+        <Link href="blog" className="newPostBtn">
+          New Post
+        </Link>
+      </div>
     </header>
   );
 };
