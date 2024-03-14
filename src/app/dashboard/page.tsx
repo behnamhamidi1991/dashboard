@@ -4,12 +4,21 @@ import "./dashboard.css";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const Dashboard = () => {
   const router = useRouter();
   const [data, setData] = React.useState("nothing");
 
-  useEffect(() => {}, [data]);
+  useEffect(() => {
+    const getUserDetails = async () => {
+      const res = await axios.get("/api/users/me");
+      console.log(res.data);
+      setData(res.data.data._id);
+    };
+
+    getUserDetails();
+  }, [data]);
 
   const onLogout = async () => {
     try {
@@ -22,20 +31,13 @@ const Dashboard = () => {
     }
   };
 
-  const getUserDetails = async () => {
-    const res = await axios.get("/api/users/me");
-    console.log(res.data);
-    setData(res.data.data._id);
-  };
-
   return (
     <div className="dashboard">
       <h1>Welcome To Your Admin Dashboard: $User</h1>
-      <button onClick={getUserDetails}>
+      <Link href={`/dashboard/${data}`}>
         Click here to go to your dashboard
-      </button>
+      </Link>
       <br />
-      {data === "nothing" ? "Nothing" : <p>{data}</p>}
       <br />
       <button className="logoutBtn" onClick={onLogout}>
         Logout

@@ -1,23 +1,47 @@
-.dashboard {
-  height: 100vh;
+.single-dashboard {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  height: 100vh;
   padding: 100px 10%;
 }
 
-.logoutBtn {
-  background-color: var(--main-color);
-  color: var(--secondary-color);
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-size: 13px;
-  text-transform: uppercase;
+.single-dashboard-header h1 {
+  font-size: 38px;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-top: 20px;
 }
 
-.logoutBtn:hover {
-  background-color: var(--light-color);
-  color: var(--primary-color);
+.single-dashboard-welcome {
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.single-dashboard-welcome span {
+  font-weight: 900;
+  color: greenyellow;
+}
+
+.single-dashboard-middle {
+  margin-top: 50px;
+  line-height: 2;
+}
+
+.single-dashboard-middle h2 {
+  font-weight: 700;
+  color: orange;
+}
+
+.single-dashboard-middle ul li {
+  font-size: 13px;
+  list-style: circle;
+  margin-left: 40px;
+}
+
+.single-logout {
+  background-color: var(--main-color);
+  padding: 4px 9px;
+  margin-top: 30px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
 }

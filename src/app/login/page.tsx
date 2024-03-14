@@ -9,6 +9,7 @@ import Spinner from "@/components/shared/Spinner/Spinner";
 
 const LoginPage = () => {
   const router = useRouter();
+  const [data, setData] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [user, setUser] = React.useState({
     email: "",
@@ -27,7 +28,7 @@ const LoginPage = () => {
         const response = await axios.post("/api/users/login", user);
         console.log("Login success", response.data);
         toast.success("Login Successful!");
-        router.push("/dashboard");
+        router.push(`/dashboard`);
       }
     } catch (error) {}
   };
