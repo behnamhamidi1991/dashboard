@@ -1,18 +1,14 @@
-import jwt from "jsonwebtoken";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse, NextRequest } from "next/server";
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
   try {
-    const token = req.cookies.token;
-    if (!token) {
-      return res.status(200).json({ isLoggedIn: false });
-    }
+    const response = NextResponse.json({
+      message: "Login Successful!",
+      success: true,
+    });
 
-    jwt.verify(token, process.env.TOKEN_SECRET!);
-
-    return res.status(200).json({ isLoggedIn: true });
-  } catch (error) {
-    // If there's an error, assume the user is not logged in
-    return res.status(200).json({ isLoggedIn: false });
+    response.cookies.get("token");
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
