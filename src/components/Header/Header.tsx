@@ -3,9 +3,11 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import "./header.css";
-import axios from "axios";
+import Cookies from "js-cookie";
+import { useAuth } from "@/Context/authContext";
 
 const Header = () => {
+<<<<<<< HEAD
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // useEffect(() => {
@@ -22,12 +24,19 @@ const Header = () => {
   // }, []);
 
   // console.log(isLoggedIn);
+=======
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+>>>>>>> dev
 
   return (
     <header className="header">
       <Link href="/dashboard" className="header-user">
         <FaUser />
+<<<<<<< HEAD
         <p>Dashboard</p>
+=======
+        {isLoggedIn ? <p>Dashboard</p> : <p>Login & Register</p>}
+>>>>>>> dev
       </Link>
       <ul className="nav-links">
         <li>
