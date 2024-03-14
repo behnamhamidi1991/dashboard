@@ -4,15 +4,19 @@ import axios from "axios";
 import "./singledashboard.css";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/Context/authContext";
 
 const UserProfile = () => {
   const router = useRouter();
   const [user, setUser] = useState("");
 
+  const { setIsLoggedIn } = useAuth();
+
   const onLogout = async () => {
     try {
       await axios.get("/api/users/logout");
       toast.success("You logged out!");
+      setIsLoggedIn(false);
       router.push("/");
     } catch (error: any) {
       console.log(error.message);

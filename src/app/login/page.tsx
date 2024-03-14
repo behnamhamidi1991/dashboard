@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Spinner from "@/components/shared/Spinner/Spinner";
+import { useAuth } from "@/Context/authContext";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -15,10 +16,11 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
+  const { setIsLoggedIn } = useAuth();
 
   useEffect(() => {}, [user]);
 
-  const onLogin = async (e) => {
+  const onLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       if (user.email === "" || user.password === "") {
@@ -28,9 +30,15 @@ const LoginPage = () => {
         const response = await axios.post("/api/users/login", user);
         console.log("Login success", response.data);
         toast.success("Login Successful!");
+        setIsLoggedIn(true);
         router.push(`/dashboard`);
       }
-    } catch (error) {}
+    } catch (error) {
+      toast.error("Something went wront!");
+      setIsLoggedIn(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

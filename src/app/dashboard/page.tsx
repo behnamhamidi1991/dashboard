@@ -5,10 +5,13 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import { useAuth } from "@/Context/authContext";
 
 const Dashboard = () => {
   const router = useRouter();
   const [data, setData] = React.useState("nothing");
+
+  const { setIsLoggedIn } = useAuth();
 
   useEffect(() => {
     const getUserDetails = async () => {
@@ -24,6 +27,7 @@ const Dashboard = () => {
     try {
       await axios.get("/api/users/logout");
       toast.success("You logged out!");
+      setIsLoggedIn(false);
       router.push("/");
     } catch (error: any) {
       console.log(error.message);

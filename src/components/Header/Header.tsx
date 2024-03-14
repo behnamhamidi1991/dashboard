@@ -4,14 +4,10 @@ import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import "./header.css";
 import Cookies from "js-cookie";
+import { useAuth } from "@/Context/authContext";
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = Cookies.get("token");
-    setIsLoggedIn(!!token);
-  }, []);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   return (
     <header className="header">
