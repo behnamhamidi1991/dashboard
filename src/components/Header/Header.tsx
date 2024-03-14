@@ -11,10 +11,17 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link href="/dashboard" className="header-user">
-        <FaUser />
-        {isLoggedIn ? <p>Dashboard</p> : <p>Login & Register</p>}
-      </Link>
+      {isLoggedIn ? (
+        <Link href="/dashboard" className="header-user-dashboard">
+          <FaUser />
+          <p className="header-dashboard-btn">Dashboard</p>
+        </Link>
+      ) : (
+        <Link href="/login" className="header-user-login">
+          <FaUser />
+          <p className="header-dashboard-btn">Login & Register</p>
+        </Link>
+      )}
       <ul className="nav-links">
         <li>
           <Link href="/">Home</Link>
