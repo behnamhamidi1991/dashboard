@@ -15,6 +15,7 @@ const SinglePost = () => {
       try {
         const post = await fetchSinglePost(id);
         setPost(post);
+        console.log(post);
       } catch (error) {
         console.log(error);
       } finally {
