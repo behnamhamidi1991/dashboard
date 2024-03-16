@@ -16,6 +16,7 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
+
   const { setIsLoggedIn } = useAuth();
 
   useEffect(() => {}, [user]);

@@ -1,16 +1,14 @@
 import { connectDB } from "@/database/dbConfig";
-import { NextRequest, NextResponse } from "next/server";
 import Post from "@/models/postModel";
 
-// GET /api/posts/:id
-export const GET = async (request: NextRequest, { params }: any) => {
+// GET /api/posts
+export const GET = async ({ params }) => {
   try {
     await connectDB();
 
     const post = await Post.findById(params.id);
 
-    if (!post) return new Response("Post Not Found!", { status: 404 });
-
+    if (!post) return new Response("Property Not Found", { status: 404 });
     return new Response(JSON.stringify(post), {
       status: 200,
     });

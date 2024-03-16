@@ -1,34 +1,57 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { fetchSinglePost } from "@/utils/request";
+import "./singlepost.css";
+const apiDomain = process.env.API_DOMAIN;
 
-const SinglePost = () => {
+async function fetchSinglePost(id: string | any) {
+  try {
+    if (!apiDomain) {
+      return null;
+    }
+
+    const res = await fetch(`${apiDomain}/posts/${id}`);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return await res.json();
+  } catch (error) {
+    throw new Error("Failed to fetch data");
+  }
+}
+
+const SinglePostPage = () => {
   const { id } = useParams();
-
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [singlePost, setSinglePost] = useState();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchPostData = async () => {
+    const fetchPosts = async () => {
       if (!id) return;
       try {
-        const post = await fetchSinglePost(id);
-        setPost(post);
-        console.log(post);
+        const singlePost = await fetchSinglePost(id);
+        setSinglePost(singlePost);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching posts" + error);
       } finally {
         setLoading(false);
       }
     };
 
-    if (post === null) {
-      fetchPostData();
+    if (singlePost === null) {
+      fetchPosts();
     }
-  }, [id, post]);
 
-  return <div></div>;
+    console.log(singlePost);
+  }, [id, singlePost]);
+
+  return (
+    <div className="singlepostPage">
+      <h2>Test</h2>
+    </div>
+  );
 };
 
-export default SinglePost;
+export default SinglePostPage;

@@ -1,0 +1,6 @@
+.singlepostPage {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 100vh;
+  padding: 100px 10%;
+}

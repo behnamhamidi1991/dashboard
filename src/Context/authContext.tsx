@@ -21,7 +21,6 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   useEffect(() => {
     const token = Cookies.get("token");
     setIsLoggedIn(!!token);

@@ -19,20 +19,4 @@ async function fetchPosts() {
   }
 }
 
-async function fetchSinglePost(id: any) {
-  try {
-    if (!apiDomain) {
-      return null;
-    }
-
-    const res = await fetch(`${apiDomain}/posts/${id}`);
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-  } catch (error) {
-    throw new Error("Failed to fetch data");
-  }
-}
-
-export { fetchPosts, fetchSinglePost };
+export { fetchPosts };
